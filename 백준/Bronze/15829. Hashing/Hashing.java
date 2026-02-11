@@ -1,4 +1,4 @@
-
+import java.math.BigInteger;
 import java.util.*;
 import java.lang.*;
 import java.io.*;
@@ -10,13 +10,14 @@ class Main {
         int l = Integer.parseInt(br.readLine());
         char[] input = br.readLine().toCharArray();
 
-        long result = 0;
+        BigInteger result = BigInteger.ZERO;
         for (int i = 0; i < l; i++) {
             // a= 97
             int n = (int) input[i] - 96;
-            result += n * Math.pow(31, i );
+            result = result.add(BigInteger.valueOf(n).multiply(BigInteger.valueOf(31).pow(i)));
+
         }
-        System.out.println(result%1234567891);
+        System.out.println(result.remainder(BigInteger.valueOf(1234567891)));
 
     }
 }
