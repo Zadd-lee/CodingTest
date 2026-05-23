@@ -1,0 +1,5 @@
+-- 코드를 작성해주세요
+
+SELECT count(*)
+FROM ECOLI_DATA
+WHERE CONV(GENOTYPE,10,2) & B'010' !=2 AND CONV(GENOTYPE,10,2) & b'101' in (1,4,5)
