@@ -19,8 +19,13 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | ------- |
 | [0238-product-of-array-except-self](https://github.com/Zadd-lee/CodingTest/tree/master/0238-product-of-array-except-self) |
 | [0283-move-zeroes](https://github.com/Zadd-lee/CodingTest/tree/master/0283-move-zeroes) |
+| [0643-maximum-average-subarray-i](https://github.com/Zadd-lee/CodingTest/tree/master/0643-maximum-average-subarray-i) |
 ## Prefix Sum
 |  |
 | ------- |
 | [0238-product-of-array-except-self](https://github.com/Zadd-lee/CodingTest/tree/master/0238-product-of-array-except-self) |
+## Sliding Window
+|  |
+| ------- |
+| [0643-maximum-average-subarray-i](https://github.com/Zadd-lee/CodingTest/tree/master/0643-maximum-average-subarray-i) |
 <!---LeetCode Topics End-->
