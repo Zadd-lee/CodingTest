@@ -22,6 +22,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0643-maximum-average-subarray-i](https://github.com/Zadd-lee/CodingTest/tree/master/0643-maximum-average-subarray-i) |
 | [0724-find-pivot-index](https://github.com/Zadd-lee/CodingTest/tree/master/0724-find-pivot-index) |
 | [1732-find-the-highest-altitude](https://github.com/Zadd-lee/CodingTest/tree/master/1732-find-the-highest-altitude) |
+| [2215-find-the-difference-of-two-arrays](https://github.com/Zadd-lee/CodingTest/tree/master/2215-find-the-difference-of-two-arrays) |
 ## Prefix Sum
 |  |
 | ------- |
@@ -32,4 +33,8 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0643-maximum-average-subarray-i](https://github.com/Zadd-lee/CodingTest/tree/master/0643-maximum-average-subarray-i) |
+## Hash Table
+|  |
+| ------- |
+| [2215-find-the-difference-of-two-arrays](https://github.com/Zadd-lee/CodingTest/tree/master/2215-find-the-difference-of-two-arrays) |
 <!---LeetCode Topics End-->
