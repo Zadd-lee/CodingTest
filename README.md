@@ -39,4 +39,16 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | ------- |
 | [1207-unique-number-of-occurrences](https://github.com/Zadd-lee/CodingTest/tree/master/1207-unique-number-of-occurrences) |
 | [2215-find-the-difference-of-two-arrays](https://github.com/Zadd-lee/CodingTest/tree/master/2215-find-the-difference-of-two-arrays) |
+## Design
+|  |
+| ------- |
+| [0933-number-of-recent-calls](https://github.com/Zadd-lee/CodingTest/tree/master/0933-number-of-recent-calls) |
+## Queue
+|  |
+| ------- |
+| [0933-number-of-recent-calls](https://github.com/Zadd-lee/CodingTest/tree/master/0933-number-of-recent-calls) |
+## Data Stream
+|  |
+| ------- |
+| [0933-number-of-recent-calls](https://github.com/Zadd-lee/CodingTest/tree/master/0933-number-of-recent-calls) |
 <!---LeetCode Topics End-->
