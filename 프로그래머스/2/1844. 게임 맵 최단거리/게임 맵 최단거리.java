@@ -1,43 +1,35 @@
-import java.util.*;
 import java.lang.*;
+import java.util.*;
 
 class Solution {
-    private static int[] dx = {0,0,1,-1};
-    private static int[] dy = {1,-1,0,0};
-    private boolean[][] visited;
-    
-    
+    int[] dx = {1,-1,0,0};
+    int[] dy  = {0,0,1,-1};
     public int solution(int[][] maps) {
-        int tx = maps.length-1;
-        int ty = maps[0].length-1;
-        visited = new boolean[tx+1][ty+1];
-        
-        Queue<int[]> q= new LinkedList<>();
+        int answer = Integer.MAX_VALUE;
+        boolean[][] visited = new boolean[maps.length][maps[0].length];
+        Queue<int[]> q = new ArrayDeque<>();
         q.offer(new int[]{0,0,1});
-        
+        visited[0][0] = true;
         while(!q.isEmpty()){
-            int[] coord = q.poll();
-            int x = coord[0];
-            int y = coord[1];
-            int cnt = coord[2];
-            visited[x][y] = true;
-                        
-            if(x==tx && y == ty) return cnt;
+            int[] p = q.poll();
+            int nx = p[0];
+            int ny = p[1];
+            
+            
+            if(nx==maps.length-1 && ny == maps[0].length-1){
+                answer = Math.min(answer,p[2]);
+            }
             
             for(int i = 0;i<4;i++){
-                int xx = x+dx[i];
-                int yy = y+dy[i];
-              
-                
-                if(xx<0 ||xx>tx || yy<0 || yy>ty ||visited[xx][yy]) continue;
-                if(maps[xx][yy]==0) continue;
-                visited[xx][yy] = true;
-
-                q.offer(new int[]{xx,yy,cnt+1});
+                int nextx = nx+dx[i];
+                int nexty = ny+dy[i];
+                if(nextx<0 || nextx>=maps.length || nexty<0 || nexty>=maps[0].length) continue;
+                if(maps[nextx][nexty]==0 ||visited[nextx][nexty]) continue;
+                visited[nextx][nexty] = true;
+                q.offer(new int[]{nextx,nexty,p[2]+1});
             }
-
-        
         }
-        return -1;
+        
+        return (answer==Integer.MAX_VALUE)?-1:answer;
     }
 }
