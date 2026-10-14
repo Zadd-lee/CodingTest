@@ -3,24 +3,22 @@ import java.lang.*;
 
 class Solution {
     public int solution(int[] numbers, int target) {
+        int answer = 0;
         
-        
-        int cnt = 0;
-        Stack<int[]> stack = new Stack<>();
-        stack.push(new int[]{0,0});
-        while(!stack.isEmpty()){
-            int[] node = stack.pop();
-            int depth = node[0];
-            int hap = node[1];
-            if(depth==numbers.length){
-                if(node[1]==target) cnt++;
-            }else{
-                stack.push(new int[]{depth+1,hap+numbers[depth]});
-                stack.push(new int[]{depth+1,hap-numbers[depth]});
-            }
+        Stack<int[]> s = new Stack<>();
+        s.push(new int[]{0,0});
+    
+        while(!s.isEmpty()){
+            int[] now = s.pop();
+            int index = now[0];
+            int hap = now[1];
+            if(index==numbers.length && hap==target) answer++; 
+            if(index>=numbers.length) continue;
+            
+            s.push(new int[]{index+1,hap+numbers[index]});
+            s.push(new int[]{index+1,hap-numbers[index]});
+            
         }
-        
-        
-        return cnt;
+        return answer;
     }
 }
