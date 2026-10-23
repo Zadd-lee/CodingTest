@@ -1,41 +1,37 @@
-import java.util.*;
 import java.lang.*;
+import java.util.*;
+
 class Solution {
     public int solution(String begin, String target, String[] words) {
-        int answer = Integer.MAX_VALUE;
-        Stack<String[]> s = new Stack<>();
-        boolean[] visited = new boolean[words.length];
-        s.push(new String[]{begin,"0"});
+        Queue<int[]> q = new ArrayDeque<>();
         
-        while(!s.isEmpty()){
-            String[] node = s.pop();
-            String now = node[0];
-            int depth = Integer.parseInt(node[1]);
+        words = Arrays.copyOf(words, words.length + 1);
+        words[words.length-1] = begin;
+        boolean[] visited = new boolean[words.length];
+        visited[words.length-1] = true;
+        
+        q.offer(new int[]{words.length-1,0});
+        
+        while(!q.isEmpty()){
+            int[] p = q.poll();
+            String now = words[p[0]];
+            if(now.equals(target)) return p[1];
             
-            if(now.equals(target)){
-                answer = Math.min(answer,depth);
-            }
-            
-            for(int i=0;i<begin.length();i++){
-                String sd = deleteCharAt(now,i);
+            for(int i = 0;i<now.length();i++){
+                StringBuffer sb = new StringBuffer("^");
+                sb.append(now);
+                sb.append("$");
+                sb.setCharAt(i+1,'.');
+
                 for(int j = 0;j<words.length;j++){
-                    String wd = deleteCharAt(words[j],i);
-                    if(!visited[j]&&sd.equals(wd)){
-                        s.push(new String[]{words[j],depth+1+""});
-                        visited[j] = true;
-                    }
+                    if(!words[j].matches(sb.toString())) continue;
+                    if(visited[j]) continue;
+                    q.offer(new int[]{j,p[1]+1});
+                    visited[j] = true;
                 }
             }
-            
-            
-            
         }
         
-        return (answer==Integer.MAX_VALUE)? 0:answer;
-    }
-    private String deleteCharAt(String word,int ind){
-        if(word.length()<=ind) return "";
-        StringBuffer sb = new StringBuffer();
-        return sb.append(word).deleteCharAt(ind).toString();
+        return 0;
     }
 }
