@@ -2,39 +2,31 @@ import java.util.*;
 import java.lang.*;
 
 class Solution {
-    boolean visited[];
+    boolean[] visited;
     List<String> answer = new ArrayList<>();
     public String[] solution(String[][] tickets) {
+        Arrays.sort(tickets,(a,b)->a[1].compareTo(b[1]));
         visited = new boolean[tickets.length];
-        
-        Arrays.sort(tickets,(a,b)->(a[1].compareTo(b[1])));
-        
-        
         
         answer.add("ICN");
         dfs(tickets,"ICN",0);
-        
-        
     
-        return answer.stream().toArray(String[]::new);
+        return answer.toArray(new String[0]);
     }
-    boolean dfs(String[][] tickets,String start,int cnt){
+    
+    boolean dfs(String[][] tickets, String start,int cnt){
         if(cnt>=tickets.length) return true;
-        
         for(int i = 0;i<tickets.length;i++){
-            String[] ticket = tickets[i];
-            if(!ticket[0].equals(start)) continue;
+            String[] t = tickets[i];
+            if(!t[0].equals(start)) continue;
             if(visited[i]) continue;
             visited[i] = true;
-            answer.add(ticket[1]);
-            if(dfs(tickets,ticket[1],cnt+1)){
-                return true;
-            }
-            
+            answer.add(t[1]);
+            if(dfs(tickets,t[1],cnt+1)) return true;   
             visited[i] = false;
-            answer.remove(answer.size()-1);
             
         }
+        answer.remove(answer.size()-1);
         return false;
     }
 }
